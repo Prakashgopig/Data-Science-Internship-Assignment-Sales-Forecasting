@@ -1,64 +1,73 @@
-# 🛒 Retail Sales Forecasting - Wiseanalytics Internship Project
+# 🛍️ Retail Sales Forecasting | Data Science Internship @ Wiseanalytics
 
-This project focuses on **sales forecasting** using real-world retail data from Ecuador, as part of a Data Science Internship at Wiseanalytics. The goal is to build predictive models that help forecast product-level sales across different stores and families.
-
----
-
-## 🔍 Part 1: Data Processing & Feature Engineering
-
-- Merged datasets: `train`, `test`, `stores`, `oil prices`, and `holidays`.
-- Created time-based features: `day`, `month`, `weekofyear`, `payday`, `earthquake`, etc.
-- Engineered lag features and rolling statistics (`lag_7`, `rolling_mean_7`, etc.)
-- Marked promotions, top product families, and holiday effects.
+Forecasting daily sales for a major retail chain in Ecuador using advanced feature engineering, machine learning, and time series modeling techniques. This project was completed as part of my Data Science Internship at **Wiseanalytics**, with the goal of generating actionable insights and boosting inventory planning efficiency.
 
 ---
 
-## 📈 Part 2: Modeling & Evaluation
+## 📌 Project Objective
 
-- **Baseline Model:** Previous day sales (Naïve forecast).
-- **Models Implemented:**
-  - Random Forest Regressor
-  - XGBoost Regressor
-  - ARIMA (per time series)
-  - LSTM (deep learning time series forecasting)
-- **Evaluation Metrics:**
-  - RMSE
-  - MAPE
-  - R² Score
+Build a robust sales forecasting model using historical transactional data, promotions, oil prices, store information, and holiday events. The final solution identifies key business drivers and offers strategic recommendations.
 
 ---
 
-## 📊 Insights & Recommendations
+## 🔄 Workflow Overview
 
-- **Top Performing Model:** XGBoost
-- **Key Drivers:** Holidays, promotions, oil prices, and paydays.
-- **Business Suggestions:**
-  - Align inventory strategy with promotional periods.
-  - Monitor oil prices as a macroeconomic signal.
-  - Prioritize top-performing product families by cluster.
+### 🔹 Part 1: Data Processing & Feature Engineering
+- Merged multiple datasets: `train`, `test`, `stores`, `oil`, and `holidays_events`.
+- Cleaned missing oil prices using linear interpolation.
+- Engineered features:
+  - **Temporal:** day, month, year, dayofweek, weekofyear
+  - **Events:** holidays, promotions, paydays, earthquake
+  - **Lag & Rolling Stats:** lag-7, lag-30, rolling mean & std
+  - **Store & Cluster Level Insights:** average store sales, top-performing families
 
----
-
-## 📁 Files Included
-
-- `train.csv`, `test.csv`, `stores.csv`, `oil.csv`, `holidays_events.csv`
-- `processed_train.csv`: after feature engineering
-- `Sales_Forecasting_Part1.ipynb`
-- `Sales_Forecasting_Part2.ipynb`
-
----
-
-## 🧠 Skills Highlighted
-
-- Data Cleaning & Wrangling (Pandas, Numpy)
-- Time Series Forecasting
-- Feature Engineering
-- Machine Learning (Sklearn, XGBoost)
-- Deep Learning (LSTM with Keras)
-- Data Visualization (Seaborn, Matplotlib)
+### 🔹 Part 2: Modeling & Evaluation
+- **Models Used:**
+  - 📊 Baseline Naïve Model
+  - 🌲 Random Forest Regressor
+  - ⚡ XGBoost Regressor
+  - 🔁 ARIMA (for individual series)
+  - 🤖 LSTM (deep learning-based time series model)
+- **Evaluation Metrics:** RMSE, MAPE, R² Score
+- **Validation:** Time-based split using the last 30 days of data
 
 ---
 
-## 📌 Note
+## 📈 Results & Insights
 
-This project was completed as part of a Data Science Internship with **Wiseanalytics** and demonstrates how data-driven insights can enhance retail planning and decision-making.
+| Model        | RMSE ↓  | MAPE ↓ | R² ↑  |
+|--------------|---------|--------|-------|
+| Baseline     | X.XX    | XX%    | X.XX  |
+| RandomForest | X.XX    | XX%    | X.XX  |
+| XGBoost ✅    | **X.XX**| **XX%**| **X.XX**|
+
+- **Best Model:** XGBoost delivered the best performance across all metrics.
+- **Key Sales Drivers:**
+  - Holidays and promotional campaigns
+  - Oil price fluctuations (macro impact)
+  - Paydays (15th and end of month)
+- **Recommendations:**
+  - Align promotions with high-demand windows
+  - Monitor oil prices to adjust economic forecasts
+  - Focus marketing on top-selling product families per cluster
+
+---
+
+## 📊 Visualizations
+
+- Total sales trends over time
+- Sales patterns around holidays
+- Oil price correlation with sales
+- Actual vs. predicted sales comparison
+- Feature importance plot (XGBoost)
+
+---
+
+## 🧠 Skills Demonstrated
+
+- ✅ Data Cleaning & Feature Engineering
+- ✅ Time Series Analysis
+- ✅ Supervised Learning (Sklearn, XGBoost)
+- ✅ Deep Learning with LSTM (Keras)
+- ✅ Model Evaluation & Visualization
+- ✅ Business Insight Generation
